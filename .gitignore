@@ -8,3 +8,5 @@ secrets/docker/buildx/
 # Releases
 /pkg
 /pg_idkit-*-gnu.tar.gz
+
+.DS_Store

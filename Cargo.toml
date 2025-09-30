@@ -26,6 +26,7 @@ pg14 = ["pgrx/pg14", "pgrx-tests/pg14"]
 pg15 = ["pgrx/pg15", "pgrx-tests/pg15"]
 pg16 = ["pgrx/pg16", "pgrx-tests/pg16"]
 pg17 = ["pgrx/pg17", "pgrx-tests/pg17"]
+pg18 = ["pgrx/pg18", "pgrx-tests/pg18"]
 pg_test = []
 
 [dependencies]
@@ -109,3 +110,12 @@ assets = [
 ]
 requires = { postgresql-server = "> 17", glibc = "*" }
 release = "pg17"
+
+[package.metadata.generate-rpm.variants.pg18]
+assets = [
+  { source = "/tmp/pg_idkit/rpm/scratch/pgrx-install/lib/postgresql/pg_idkit.so", dest = "/usr/lib64/pgsql/pg_idkit.so", mode = "755" },
+  { source = "/tmp/pg_idkit/rpm/scratch/pgrx-install/share/postgresql/extension/pg_idkit--0.3.1.sql", dest = "/usr/share/pgsql/extension/pg_idkit--0.3.1.sql", mode = "755" },
+  { source = "/tmp/pg_idkit/rpm/scratch/pgrx-install/share/postgresql/extension/pg_idkit.control", dest = "/usr/share/pgsql/extension/pg_idkit.control", mode = "755" },
+]
+requires = { postgresql-server = "> 18", glibc = "*" }
+release = "pg18"
